@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home/Home";
 import PersonalOrBusinessInfo from "./pages/Home/PersonalOrBusinessInfo/PersonalOrBusinessInfo";
 import Login from "./pages/Shared/Login/Login";
 import Navigation from "./pages/Shared/Navigation/Navigation";
+import PrivateRoute from "./pages/Shared/PrivateRoute/PrivateRoute";
 import Register from "./pages/Shared/Register/Register";
 
 function App() {
@@ -19,7 +20,11 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route
             path="/register/personalInfo"
-            element={<PersonalOrBusinessInfo />}
+            element={
+              <PrivateRoute>
+                <PersonalOrBusinessInfo />
+              </PrivateRoute>
+            }
           ></Route>
           <Route exact path="/" element={<Home />}></Route>
         </Routes>

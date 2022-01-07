@@ -1,6 +1,5 @@
 import { faPhoneSquareAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import React from "react";
 import {
   Button,
@@ -10,10 +9,13 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import jmCourierLogo from "../../../images/jmCourierLogo.png";
 import "./Navigation.css";
 const phoneSquare = <FontAwesomeIcon icon={faPhoneSquareAlt} />;
 const Navigation = () => {
+  const { user, signOutUser } = useAuth();
   return (
     <>
       <Navbar collapseOnSelect expand="lg">
@@ -44,9 +46,19 @@ const Navigation = () => {
                   110888
                 </a>
               </Navbar.Text>
-              <Nav.Link as={Link} to="/login">
-                <Button variant="danger">Login</Button>
-              </Nav.Link>
+              {!user.email ? (
+                <Nav.Link as={Link} to="/login">
+                  <Button variant="danger">Login</Button>
+                </Nav.Link>
+              ) : (
+                <Button
+                  className="custom-login-logout-btn"
+                  onClick={signOutUser}
+                  variant="danger"
+                >
+                  Logout
+                </Button>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

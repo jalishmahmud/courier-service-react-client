@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {
+  Alert,
+  Button,
+  Col,
+  Container,
+  Form,
+  Row,
+  Spinner,
+} from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 const Register = () => {
   const [registerInfo, setRegisterInfo] = useState({});
-  const { registerNewUser } = useAuth();
+  const { registerNewUser, signInWithGoogle, isLoading, authError } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const getInputFieldValue = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -12,10 +23,13 @@ const Register = () => {
     newRegisterInfo[field] = value;
     setRegisterInfo(newRegisterInfo);
   };
-  console.log(registerInfo);
+
   const handleRegister = (e) => {
-    registerNewUser(registerInfo.email, registerInfo.password);
+    registerNewUser(registerInfo.email, registerInfo.password, navigate);
     e.preventDefault();
+  };
+  const handleGoogleSignIn = () => {
+    signInWithGoogle(location, navigate);
   };
   return (
     <div>
@@ -43,11 +57,11 @@ const Register = () => {
                   placeholder="Your password"
                 />
               </Form.Group>
-              {/* {authError && (
+              {authError && (
                 <Alert className="my-3" variant="danger">
                   {authError}
                 </Alert>
-              )} */}
+              )}
 
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Remember" />
@@ -56,13 +70,13 @@ const Register = () => {
               <Button className="me-2" variant="primary" type="submit">
                 Register
               </Button>
-              {/* {isLoading && <Spinner animation="border" variant="primary" />} */}
+              {isLoading && <Spinner animation="border" variant="primary" />}
               <span className="m-4">
                 <Link to="/login">Already Register? Login Here</Link>
               </span>
             </Form>
             <div className="my-3">OR</div>
-            <Button onClick="" variant="danger" type="submit">
+            <Button onClick={handleGoogleSignIn} variant="danger" type="submit">
               Login With Google
             </Button>
           </Col>
