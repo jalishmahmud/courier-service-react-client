@@ -1,0 +1,14 @@
+.phone-icon {
+  border: 1px solid #5c2150;
+  padding: 6px 12px;
+  font-size: 22px;
+  border-radius: 100%;
+  margin-right: 10px;
+  margin-left: 30px;
+  color: #5c2150;
+}
+.navbar {
+  padding: 1.3rem 1rem;
+  border-top: 5px solid #5c2150;
+  background-color: #fff;
+}

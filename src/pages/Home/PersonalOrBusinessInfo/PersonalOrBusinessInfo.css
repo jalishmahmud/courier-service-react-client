@@ -1,0 +1,29 @@
+input {
+  font-size: 16px !important;
+  padding: 22px 15px !important;
+}
+select {
+  font-size: 16px !important;
+  padding: 10px !important;
+}
+
+button.custom-lg-btn {
+  font-size: 16px !important;
+  padding: 12px 15px !important;
+}
+input.custom-lg-btn {
+  font-size: 16px !important;
+  padding: 12px 15px !important;
+  margin-left: -15px;
+}
+.input-group-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.input-field-title {
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: rgb(117, 117, 117);
+}
