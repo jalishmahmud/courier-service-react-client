@@ -1,14 +1,37 @@
-import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Alert, Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import useAuth from "../../../hooks/useAuth";
 import "./PersonalOrBusinessInfo.css";
 const PersonalOrBusinessInfo = () => {
+  const [isSuccess, setIsSuccess] = useState(false);
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    data.userEmail = user.email;
+    if (user.displayName) {
+      data.userName = user.displayName;
+    }
+    fetch("http://localhost:4000/userInformation", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          setIsSuccess(true);
+          reset();
+        }
+      });
+  };
   return (
     <Container className="py-5">
       <Row>
@@ -171,6 +194,11 @@ const PersonalOrBusinessInfo = () => {
                 value="Complete Registration"
               />
             </Col>
+            {isSuccess && (
+              <Alert className="my-3" variant="success">
+                Product added successfully.
+              </Alert>
+            )}
           </form>
         </Col>
       </Row>

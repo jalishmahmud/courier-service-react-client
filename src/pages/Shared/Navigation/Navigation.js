@@ -42,7 +42,7 @@ const Navigation = () => {
             <Nav className="me-auto">
               <Navbar.Text>
                 <a href="tel:+8801521110888">
-                  <span class="phone-icon">{phoneSquare}</span>(+88) 01521
+                  <span className="phone-icon">{phoneSquare}</span>(+88) 01521
                   110888
                 </a>
               </Navbar.Text>
