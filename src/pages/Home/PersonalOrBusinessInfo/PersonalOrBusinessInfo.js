@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { Alert, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import "./PersonalOrBusinessInfo.css";
 const PersonalOrBusinessInfo = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const { user } = useAuth();
+
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -17,6 +22,7 @@ const PersonalOrBusinessInfo = () => {
     if (user.displayName) {
       data.userName = user.displayName;
     }
+    setIsSuccess(true);
     fetch("https://floating-sea-71952.herokuapp.com/userInformation", {
       method: "POST",
       headers: {
@@ -27,8 +33,9 @@ const PersonalOrBusinessInfo = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          setIsSuccess(true);
+          setIsSuccess(false);
           reset();
+          navigate("/dashboard");
         }
       });
   };
@@ -193,12 +200,14 @@ const PersonalOrBusinessInfo = () => {
                 type="submit"
                 value="Complete Registration"
               />
+              {isSuccess && (
+                <Spinner
+                  className="ml-4"
+                  animation="border"
+                  variant="primary"
+                />
+              )}
             </Col>
-            {isSuccess && (
-              <Alert className="my-3" variant="success">
-                Product added successfully.
-              </Alert>
-            )}
           </form>
         </Col>
       </Row>

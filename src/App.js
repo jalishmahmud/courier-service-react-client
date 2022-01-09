@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
+import MakeAdmin from "./pages/Dashboard/MakeAdmin/MakeAdmin";
+import PickupRequest from "./pages/Dashboard/PickupRequest/PickupRequest";
 import Home from "./pages/Home/Home/Home";
 import PersonalOrBusinessInfo from "./pages/Home/PersonalOrBusinessInfo/PersonalOrBusinessInfo";
 import Footer from "./pages/Shared/Footer/Footer";
@@ -18,7 +20,14 @@ function App() {
           <Route path="/home" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="/dashboard/makeAdmin" element={<MakeAdmin />}></Route>
+            <Route
+              path="/dashboard/requestPickUp"
+              element={<PickupRequest />}
+            ></Route>
+          </Route>
+
           <Route
             path="/register/personalInfo"
             element={

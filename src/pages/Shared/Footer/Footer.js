@@ -5,7 +5,7 @@ import logo from "../../../images/jmCourierLogo.png";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer mt-5">
       <Container>
         <Row className="footer-content pt-3">
           <Col className="py-4" xs={12} md={3}>
