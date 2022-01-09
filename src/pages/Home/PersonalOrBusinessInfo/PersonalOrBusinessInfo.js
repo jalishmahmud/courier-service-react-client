@@ -17,7 +17,7 @@ const PersonalOrBusinessInfo = () => {
     if (user.displayName) {
       data.userName = user.displayName;
     }
-    fetch("http://localhost:4000/userInformation", {
+    fetch("https://floating-sea-71952.herokuapp.com/userInformation", {
       method: "POST",
       headers: {
         "content-type": "application/json",

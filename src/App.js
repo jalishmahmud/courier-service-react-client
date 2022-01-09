@@ -3,6 +3,7 @@ import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import Home from "./pages/Home/Home/Home";
 import PersonalOrBusinessInfo from "./pages/Home/PersonalOrBusinessInfo/PersonalOrBusinessInfo";
+import Footer from "./pages/Shared/Footer/Footer";
 import Login from "./pages/Shared/Login/Login";
 import Navigation from "./pages/Shared/Navigation/Navigation";
 import PrivateRoute from "./pages/Shared/PrivateRoute/PrivateRoute";
@@ -28,6 +29,7 @@ function App() {
           ></Route>
           <Route exact path="/" element={<Home />}></Route>
         </Routes>
+        <Footer></Footer>
       </Router>
     </AuthProvider>
   );
