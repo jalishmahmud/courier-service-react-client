@@ -64,10 +64,12 @@ const Footer = () => {
             <p>Mon - Sun / 9:00 AM - 8:00 PM</p>
           </Col>
         </Row>
-        <Row>
-          <p className="copyrhgit text-center py-3">
-            Copyright &copy; JM Courier, All Rights Reserved. Developed By :
-            Jalish Mahmud
+        <Row className="copyright d-flex justify-content-center ">
+          <p className=" py-3">
+            Copyright &copy; JM Courier, All Rights Reserved. Developed By{" "}
+            <Link to="https://portfolio-of-jalish.netlify.app/">
+              Jalish Mahmud
+            </Link>
           </p>
         </Row>
       </Container>

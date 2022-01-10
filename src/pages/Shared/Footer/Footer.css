@@ -46,7 +46,7 @@
 .footer-content span:hover {
   border: 1px solid #ff3333;
 }
-.copyrhgit {
-  color: #fff;
-  border-top: 1px solid #ddd;
+.copyright {
+  color: #005fdbe5;
+  border-top: 1px solid #004db3;
 }

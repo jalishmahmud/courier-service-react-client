@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
+import DashboardHome from "./pages/Dashboard/DashboardHome/DashboardHome";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin/MakeAdmin";
 import PickupRequest from "./pages/Dashboard/PickupRequest/PickupRequest";
 import Home from "./pages/Home/Home/Home";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="/dashboard" element={<DashboardHome />}></Route>
             <Route path="/dashboard/makeAdmin" element={<MakeAdmin />}></Route>
             <Route
               path="/dashboard/requestPickUp"
