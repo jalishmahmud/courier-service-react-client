@@ -38,8 +38,8 @@ const EasyRegistrationOrLogin = () => {
 
   return (
     <div>
-      <Container className="py-5">
-        <h2 className="text-center mb-5">
+      <Container className="py-2">
+        <h2 className="text-center mb-3">
           Register as Business Owner or Individual Easily
         </h2>
         <br />
@@ -80,7 +80,7 @@ const EasyRegistrationOrLogin = () => {
                     </Alert>
                   )}
                   <Button
-                    className="w-100 custom-lg-btn"
+                    className="w-100 custom-lg-btn mb-3"
                     variant="primary"
                     type="submit"
                     size="lg"
@@ -91,7 +91,7 @@ const EasyRegistrationOrLogin = () => {
                 <Col xs={12} md={6}>
                   <Button
                     onClick={handleGoogleSignIn}
-                    className="w-100 custom-lg-btn"
+                    className="w-100 custom-lg-btn mb-3"
                     variant="danger"
                     size="lg"
                   >

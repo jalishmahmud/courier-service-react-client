@@ -33,7 +33,7 @@ const CreateNewBranch = () => {
     if (user.displayName) {
       data.userName = user.displayName;
     }
-    fetch("https://floating-sea-71952.herokuapp.com/addNewUpojela", {
+    fetch("http://localhost:5000/createNewBranch", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -54,7 +54,7 @@ const CreateNewBranch = () => {
         <Col xs={12}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <h4 className="input-group-title pb-2 mb-4 border-bottom">
-              Add New Upojela:
+              Create New Branch:
             </h4>
             <Row>
               <Col xs={12} md={6}>

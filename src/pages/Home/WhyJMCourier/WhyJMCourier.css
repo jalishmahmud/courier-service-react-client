@@ -1,0 +1,13 @@
+.single-reason {
+}
+.single-reason h3 {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.single-reason p {
+  text-align: center;
+}

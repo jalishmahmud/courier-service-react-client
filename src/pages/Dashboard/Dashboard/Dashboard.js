@@ -23,6 +23,9 @@ const Dashboard = () => {
             </Card.Header>
             <ListGroup variant="flush">
               <ListGroup.Item>
+                <Link to="/dashboard/createNewBranch"> Create New Branch </Link>
+              </ListGroup.Item>
+              <ListGroup.Item>
                 <Link to="/dashboard/makeAdmin">Make Admin</Link>
               </ListGroup.Item>
               <ListGroup.Item>
@@ -36,9 +39,6 @@ const Dashboard = () => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Link to="/dashboard/addNewLocation"> Add New Location </Link>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Link to="/dashboard/createNewBranch"> Create New Branch </Link>
               </ListGroup.Item>
             </ListGroup>
           </Card>
