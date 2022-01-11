@@ -13,10 +13,32 @@ const Dashboard = () => {
             </Card.Header>
             <ListGroup variant="flush">
               <ListGroup.Item>
+                <Link to="/dashboard/requestPickUp"> Request Pick Up</Link>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+          <Card className="mt-4">
+            <Card.Header>
+              <h5 className="mt-1">Configuration</h5>
+            </Card.Header>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
                 <Link to="/dashboard/makeAdmin">Make Admin</Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link to="/dashboard/requestPickUp"> Request Pick Up</Link>
+                <Link to="/dashboard/addNewArea">Add New Area</Link>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Link to="/dashboard/addNewDistrict"> Add New District </Link>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Link to="/dashboard/addNewUpojela"> Add New Upojela </Link>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Link to="/dashboard/addNewLocation"> Add New Location </Link>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Link to="/dashboard/createNewBranch"> Create New Branch </Link>
               </ListGroup.Item>
             </ListGroup>
           </Card>
