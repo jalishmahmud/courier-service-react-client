@@ -5,7 +5,7 @@ const MyPickUpRequest = () => {
   const [requestedPickup, setRequestedPickup] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/pickUpRequest`)
+    fetch(`https://floating-sea-71952.herokuapp.com/pickUpRequest`)
       .then((res) => res.json())
       .then((data) => setRequestedPickup(data));
   }, []);

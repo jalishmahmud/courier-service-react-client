@@ -33,7 +33,7 @@ const CreateNewBranch = () => {
     if (user.displayName) {
       data.userName = user.displayName;
     }
-    fetch("http://localhost:5000/createNewBranch", {
+    fetch("https://floating-sea-71952.herokuapp.com/createNewBranch", {
       method: "POST",
       headers: {
         "content-type": "application/json",
