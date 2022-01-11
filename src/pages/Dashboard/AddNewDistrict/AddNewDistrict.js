@@ -9,7 +9,7 @@ const AddNewDistrict = () => {
 
   const { user } = useAuth();
   useEffect(() => {
-    fetch("http://localhost:5000/getAllArea")
+    fetch("https://floating-sea-71952.herokuapp.com/getAllArea")
       .then((res) => res.json())
       .then((data) => setAreas(data));
   }, []);
@@ -27,7 +27,7 @@ const AddNewDistrict = () => {
     if (user.displayName) {
       data.userName = user.displayName;
     }
-    fetch("http://localhost:5000/addNewDistrict", {
+    fetch("https://floating-sea-71952.herokuapp.com/addNewDistrict", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -69,9 +69,9 @@ const AddNewDistrict = () => {
                 <input
                   className="form-control form-control-lg mb-3 mt-2"
                   placeholder="District Name"
-                  {...register("upojelaName", { required: true })}
+                  {...register("districtName", { required: true })}
                 />
-                {errors.firstName && <span>This field is required</span>}
+                {errors.districtName && <span>This field is required</span>}
               </Col>
             </Row>
 

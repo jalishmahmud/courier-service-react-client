@@ -20,7 +20,7 @@ const AddNewArea = () => {
     if (user.displayName) {
       data.userName = user.displayName;
     }
-    fetch("http://localhost:5000/addNewArea", {
+    fetch("https://floating-sea-71952.herokuapp.com/addNewArea", {
       method: "POST",
       headers: {
         "content-type": "application/json",

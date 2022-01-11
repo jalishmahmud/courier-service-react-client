@@ -9,7 +9,7 @@ const AddNewUpojela = () => {
 
   const { user } = useAuth();
   useEffect(() => {
-    fetch("http://localhost:5000/getAllDistrict")
+    fetch("https://floating-sea-71952.herokuapp.com/getAllDistrict")
       .then((res) => res.json())
       .then((data) => setAllDistrict(data));
   }, []);
@@ -27,7 +27,7 @@ const AddNewUpojela = () => {
     if (user.displayName) {
       data.userName = user.displayName;
     }
-    fetch("http://localhost:5000/addNewUpojela", {
+    fetch("https://floating-sea-71952.herokuapp.com/addNewUpojela", {
       method: "POST",
       headers: {
         "content-type": "application/json",
