@@ -5,7 +5,9 @@ import AddNewDistrict from "./pages/Dashboard/AddNewDistrict/AddNewDistrict";
 import AddNewLocation from "./pages/Dashboard/AddNewLocation/AddNewLocation";
 import AddNewUpojela from "./pages/Dashboard/AddNewUpojela/AddNewUpojela";
 import CreateNewBranch from "./pages/Dashboard/CreateNewBranch/CreateNewBranch";
+import CompleteProfile from "./pages/Dashboard/Dashboard/CompleteProfile/CompleteProfile";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
+import MyPickUpRequest from "./pages/Dashboard/Dashboard/MyPickUpRequest/MyPickUpRequest";
 import DashboardHome from "./pages/Dashboard/DashboardHome/DashboardHome";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin/MakeAdmin";
 import PickupRequest from "./pages/Dashboard/PickupRequest/PickupRequest";
@@ -32,6 +34,14 @@ function App() {
             <Route
               path="/dashboard/requestPickUp"
               element={<PickupRequest />}
+            ></Route>
+            <Route
+              path="/dashboard/myPickUpRequest"
+              element={<MyPickUpRequest />}
+            ></Route>
+            <Route
+              path="/dashboard/completeProfile"
+              element={<CompleteProfile />}
             ></Route>
 
             <Route

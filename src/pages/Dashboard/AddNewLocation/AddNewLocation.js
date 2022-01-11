@@ -48,7 +48,7 @@ const AddNewLocation = () => {
         <Col xs={12}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <h4 className="input-group-title pb-2 mb-4 border-bottom">
-              Add New Location:
+              Add New Location
             </h4>
             <Row>
               <Col xs={12} md={6}>

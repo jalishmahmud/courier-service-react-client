@@ -13,7 +13,13 @@ const Dashboard = () => {
             </Card.Header>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <Link to="/dashboard/requestPickUp"> Request Pick Up</Link>
+                <Link to="/dashboard/completeProfile"> Complete Profile</Link>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Link to="/dashboard/requestPickUp"> Request New Pick Up</Link>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Link to="/dashboard/myPickUpRequest"> My Pick Up Request</Link>
               </ListGroup.Item>
             </ListGroup>
           </Card>
